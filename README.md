@@ -9,15 +9,19 @@ This scenario provides instructions for the following tasks:
 
 ## Lession 1. Setting up the CLI
 
-Install the IBM Bluemix Container Service CLI, the image registry CLI, and their prerequisites. These CLIs are used in later lessons and are required to manage your Kubernetes cluster from your local machine, create images to deploy as containers, and in a later tutorial, deploy apps into the cluster. 
+Install the IBM Bluemix Container Service CLI, the image registry CLI, and their prerequisites. These CLIs are used in later lessons and are required to manage your Kubernetes cluster from your local machine, create images to deploy as containers, and in a later tutorial, deploy apps into the cluster.
+
 
 1. If you do not have one yet, create a [Bluemix account](https://console.ng.bluemix.net/registration/). Make note of your user name and password as this information is required later.
 
+> Linux Quickstart: For Linux users, you can run `bash linux.sh` and move on to [Lession 2](#lesson-2-setting-up-your-cluster-environment).
 
 2. As a prerequisite for the Bluemix CLI, install the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli/releases). You must install the Cloud Foundry CLI in the default location for your operating system, otherwise the PATH environment variable does not match your installation directory. The prefix for running the Cloud Foundry CLI commands is `cf`.
 
 
 3. As a prerequisite for the Bluemix Kubernetes plug-in, install the [Bluemix CLI](http://clis.ng.bluemix.net/ui/home.html). The prefix for running commands by using the Bluemix CLI is `bx`.
+
+> OS X Quickstart: For Mac users, after you installed the Cloud Foundry CLI and Bluemix CLI, you can run `bash osx.sh` and move on to [Lession 2](#lesson-2-setting-up-your-cluster-environment).
 
 
 4. Log into the Bluemix CLI. 
@@ -71,7 +75,7 @@ Congratulations! You successfully created your Bluemix account and installed the
 
 1. Create your free Kubernetes cluster
     ```bash
-    $ bx cs cluster-create --name wordpress
+    $ bx cs cluster-create --name [your_cluster_name]
     ```
     A free cluster comes with one worker node to deploy container pods upon. A worker node is the compute host, typically a virtual machine, that your pods run on. An app in production runs replicas of a pod across multiple worker nodes to provide higher availability for your app.
     
@@ -79,7 +83,7 @@ Congratulations! You successfully created your Bluemix account and installed the
 
 2. Before you continue to the next step, verify that the deployment of your worker node is complete. 
     ```bash
-    $ bx cs workers wordpress
+    $ bx cs workers [your_cluster_name]
     ID                                           Public IP       Private IP    Machine Type  State     Status   
     dal10-pa8dfcc5223804439c87489886dbbc9c07-w1  169.47.223.113  10.171.42.93  free         deployed  Deploy Automation Successful   
     ```
@@ -88,7 +92,7 @@ Congratulations! You successfully created your Bluemix account and installed the
     
     a. Download the configuration file and certificates for the pr_firm_cluster cluster. 
     ```bash
-    $ bx cs cluster-config wordpress
+    $ bx cs cluster-config [your_cluster_name]
     export KUBECONFIG=/Users/ibm/.bluemix/plugins/cs-cli/clusters/wordpress/kube-config-dal10-wordpress.yml
     ```
     b. Copy and paste the command from the previous step to set the KUBECONFIG environment variable and configure your CLI to run kubectl commands against your cluster. 
