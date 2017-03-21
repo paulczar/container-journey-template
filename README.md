@@ -4,7 +4,7 @@
 
 This scenario provides instructions for the following tasks:
 - Create a Kubernetes cluster with one worker node
-- Install the CLIs for using the Kubernetes API and managing Docker images
+- Install the CLIs for using the Kubernetes API
 
 
 ## Lession 1. Setting up the CLI
