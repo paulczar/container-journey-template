@@ -16,6 +16,8 @@ Install the IBM Bluemix Container Service CLI, the image registry CLI, and their
 
 > Linux Quickstart: For Linux users, you can run `bash linux.sh` and move on to [Lession 2](#lesson-2-setting-up-your-cluster-environment).
 
+> Vagrant Quickstart: For Vagrant users, you can run `vagrant up` and then login `vagrant ssh` and run steps 4 and 7 then move on to [Lession 2](#lesson-2-setting-up-your-cluster-environment).
+
 2. As a prerequisite for the Bluemix CLI, install the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli/releases). You must install the Cloud Foundry CLI in the default location for your operating system, otherwise the PATH environment variable does not match your installation directory. The prefix for running the Cloud Foundry CLI commands is `cf`.
 
 
@@ -26,7 +28,7 @@ Install the IBM Bluemix Container Service CLI, the image registry CLI, and their
 
 4. Log into the Bluemix CLI. 
     ```bash
-    $ bx login
+    $ bx login -a https://api.ng.bluemix.net
     ```
 
 5. Follow the prompts to select an account and space to log in to.
